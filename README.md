@@ -25,7 +25,10 @@ examples/
 
 ## Soluciones publicadas
 
-- [DNS gobernado para agentes](security/governed-dns-agent/) — patrón para permitir que un agente gestione DNS sin recibir directamente el token del proveedor.
+- [Organizador local de documentos](personal/local-document-organizer/) — OCR, clasificación local, nombres consistentes y copia segura.
+- [De reunión a tareas, en local](work/local-meeting-to-tasks/) — transcripción local + extracción de decisiones y acciones con evidencia.
+- [Agente recuperable con checkpoints](agents/resilient-checkpoints/) — checkpoints, idempotencia y reintentos limitados.
+- [DNS gobernado para agentes](security/governed-dns-agent/) — gestión DNS sin entregar el token directamente al agente.
 
 ## Licencia
 
