@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "AO-WRE Visual Explorer",
+  "short_name": "AO-WRE Visual",
+  "version": "1.1.0",
+  "description": "Captura la página completa, recorre menús laterales SPA, enlaces internos, pestañas y paneles con desplazamiento y exporta PNG e índice HTML en un ZIP local.",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "tabs", "downloads"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_title": "AO-WRE Visual Explorer · Ojos y manos"},
+  "commands": {"_execute_action": {"suggested_key": {"default": "Ctrl+Shift+Y"}, "description": "Abrir capturador visual"}},
+  "icons": {"16":"icons/16.png", "48":"icons/48.png", "128":"icons/128.png"}
+}

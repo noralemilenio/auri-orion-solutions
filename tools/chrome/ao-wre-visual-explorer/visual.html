@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AO-WRE Visual Explorer</title>
+  <link rel="stylesheet" href="visual.css" />
+  <script type="module" src="visual.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="mark">◈</div>
+    <div class="hero-title"><div class="eyebrow">AURI–ORION · WEB RESEARCH ENGINEERING</div><h1>Visual Explorer <span>1.1</span></h1><p>Ojos y manos para capturar pantallas, desplazamientos y recorridos web.</p></div>
+    <div class="pill">LOCAL · PRIVADO</div>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>Web de origen</h2>
+      <p id="origin" class="origin">Buscando pestaña de origen…</p>
+      <label for="mode">Alcance de la captura</label>
+      <select id="mode">
+        <option value="page">Solo esta página completa</option>
+        <option value="guided">Esta página + pestañas, desplegables y paneles internos</option>
+        <option value="site">Recorrido automático: enlaces internos y pantallas</option>
+      </select>
+      <p class="hint">Captura por desplazamientos y une las imágenes PNG. El modo automático visita enlaces internos y pantallas del menú lateral (incluso sin cambiar de URL).</p>
+      <div id="site-options" class="options hidden">
+        <div class="settings">
+          <div><label for="maxPages">Máximo de páginas (URL)</label><select id="maxPages"><option value="10">10</option><option value="25" selected>25</option><option value="50">50</option><option value="100">100</option><option value="200">200</option></select></div>
+          <div><label for="maxViews">Máximo total de pantallas</label><select id="maxViews"><option value="25">25</option><option value="50">50</option><option value="100" selected>100</option><option value="200">200</option><option value="500">500</option></select></div>
+        </div>
+        <label class="check"><input id="sidebar" type="checkbox" checked /> Recorrer los menús laterales (incluye navegación React sin cambio de URL)</label>
+      </div>
+      <div class="options">
+        <label class="check"><input id="tabs" type="checkbox" checked /> Capturar pestañas visibles (tabs) sin enviar formularios</label>
+        <label class="check"><input id="panels" type="checkbox" checked /> Recorrer paneles con scroll propio</label>
+        <label class="check"><input id="restore" type="checkbox" checked /> Volver a la URL inicial al finalizar</label>
+      </div>
+      <div class="settings"><div><label for="maxTiles">Límite de capturas por pantalla</label><select id="maxTiles"><option value="30">30</option><option value="60" selected>60</option><option value="100">100</option></select></div><div><label for="delay">Espera para contenido dinámico</label><select id="delay"><option value="400">0,4 s</option><option value="850" selected>0,85 s</option><option value="1500">1,5 s</option></select></div></div>
+      <div class="buttons"><button id="start" class="primary">◉ Iniciar captura visual</button><button id="stop" disabled>Detener</button></div>
+      <p class="warning">Evita botones de compra, borrado y envío; no envía formularios. Una web mal diseñada podría realizar cambios al navegar. Evita cambiar de pestaña durante la captura; es necesario que la web permanezca visible.</p>
+    </section>
+    <section class="panel status">
+      <h2>Estado de la exploración</h2>
+      <p id="message">Lista para comenzar.</p>
+      <progress id="progress" max="100" value="0"></progress>
+      <div id="stats">0 pantallas · 0 imágenes · 0 incidencias</div>
+      <pre id="log" aria-live="polite"></pre>
+      <div id="result" class="result hidden"></div>
+    </section>
+    <footer>100 % local · Captura únicamente páginas que puedas visitar con tu sesión · Sin subida a servidores</footer>
+  </main>
+</body>
+</html>
